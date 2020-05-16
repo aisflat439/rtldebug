@@ -2,7 +2,7 @@
 	"name": "rtl-quick-debug",
 	"displayName": "React Testing Library - Quick Debug",
 	"description": "Makes debugging in react testing library a cinch!",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publisher": "aisflat439",
 	"author": {
 		"name": "Devin Fitzsimons"
@@ -12,7 +12,7 @@
 		"url": "https://github.com/aisflat439/rtldebug"
 	},
 	"engines": {
-		"vscode": "1.45.0"
+		"vscode": "^1.45.0"
 	},
 	"categories": [
 		"Programming Languages",
