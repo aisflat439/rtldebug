@@ -11,7 +11,7 @@ const insertText = (text: string) => {
 	}
 
 	editor.edit((editBuilder) => {
-		editBuilder.insert(editor.selection.active, `debug()`)
+		editBuilder.insert(editor.selection.active, text)
 	});
 
 };
