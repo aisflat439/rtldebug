@@ -6,7 +6,7 @@ This extension declares a debug and calls it on the next line for you.
 
 ## Installing
 
-This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/)
+This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/#some-value-here?)
 
 ## How to use
 
