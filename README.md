@@ -6,7 +6,7 @@ This extension declares a debug and calls it on the next line for you.
 
 ## Installing
 
-This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/#some-value-here?)
+This extension is available for free in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=aisflat439.rtl-quick-debug)
 
 ## How to use
 
