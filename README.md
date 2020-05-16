@@ -13,7 +13,7 @@ This extension is available for free in the [Visual Studio Code Marketplace](htt
 #### Only activates with .js and .ts files
 
 * Inside where you are declaring rtl queries, press `Cmd+Shift+B` (Mac), or `Ctrl+Shift+B` (Windows)
-* The output will be a comma and a debug, and (on a new line) a debug that's called. `debug();`;
+* The output will be a comma and a debug, and (on a new line) a debug that's called. `debug();`
 
 #### Keyboard Shortcut
 By default the keyboard shortcut is `Cmd+Shift+B` or `Ctrl+Shift+B`
