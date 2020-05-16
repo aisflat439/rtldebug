@@ -1,23 +1,69 @@
 {
-	"name": "rtldebug",
-	"displayName": "rtldebug",
+	"name": "rtl-quick-debug",
+	"displayName": "React Testing Library - Quick Debug",
 	"description": "Makes debugging in react testing library a cinch!",
 	"version": "0.0.1",
+	"publisher": "aisflat439",
+	"author": {
+		"name": "Devin Fitzsimons"
+	},
 	"engines": {
 		"vscode": "^1.45.0"
 	},
 	"categories": [
+		"Programming Languages",
+		"Debuggers",
 		"Other"
 	],
+	"keywords": [
+		"Javascript",
+		"Debug",
+		"React Testing Library",
+		"RTL"
+	],
 	"activationEvents": [
-        "onCommand:rtldebug.helloWorld"
+		"onLanguage:javascript",
+		"onLanguage:typescript",
+		"onCommand:rtldebug.debug"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"languages": [
+			{
+				"id": "javascript",
+				"aliases": [
+					"JavaScript",
+					"javascript",
+					"js"
+				],
+				"extensions": [
+					".js"
+				]
+			},
+			{
+				"id": "typescript",
+				"aliases": [
+					"TypeScript",
+					"typescript",
+					"ts"
+				],
+				"extensions": [
+					".ts"
+				]
+			}
+		],
 		"commands": [
 			{
-				"command": "rtldebug.helloWorld",
-                "title": "Hello World"
+				"command": "rtldebug.debug",
+				"title": "Debug Statement React Testing Library"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "rtldebug.debug",
+				"key": "ctrl+shift+b",
+				"mac": "cmd+shift+b",
+				"when": "editorTextFocus"
 			}
 		]
 	},
