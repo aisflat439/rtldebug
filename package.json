@@ -2,7 +2,7 @@
 	"name": "rtl-quick-debug",
 	"displayName": "React Testing Library - Quick Debug",
 	"description": "Makes debugging in react testing library a cinch!",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"publisher": "fitzsimonsdevin",
 	"author": {
 		"name": "fitzsimonsdevin"
@@ -61,6 +61,14 @@
 			{
 				"command": "rtldebug.debug",
 				"title": "Debug Statement React Testing Library"
+			},
+			{
+				"command": "rtldebug.props",
+				"title": "Log props from setup function"
+			},
+			{
+				"command": "rtldebug.render",
+				"title": "create a setup function"
 			}
 		],
 		"keybindings": [
@@ -68,6 +76,18 @@
 				"command": "rtldebug.debug",
 				"key": "ctrl+shift+b",
 				"mac": "cmd+shift+b",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "rtldebug.props",
+				"key": "ctrl+shift+j",
+				"mac": "cmd+shift+j",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "rtldebug.render",
+				"key": "ctrl+shift+h",
+				"mac": "cmd+shift+h",
 				"when": "editorTextFocus"
 			}
 		]

@@ -23,9 +23,49 @@ Press `Cmd+P` or `Ctrl+P` and type in `Open Keyboard Shortcuts`.
 Search for `Log Javascript Selection` and click on the `pen icon`.
 This is where you can enter any `Shortcut` you choose.
 
+## Extras
+
+There's a helpful pattern for testing where you can setup each test component with default props, then update the props as you go. This looks something like:
+```js
+describe('<Example />', () => {
+
+  const setup = overrides => {
+    const props = {
+      title: "some title",
+      ...overrides
+    }
+
+    const R = render(<Example {...props} />)
+
+    return {
+      ...R,
+      props
+    }
+  }
+
+  it('renders the provided title', () => {
+      const { getByText } = setup('Override title!')
+
+      expect(getByText('Override title!')).toBeInTheDocument()
+  })
+```
+
+Since I use this all the time, I've added the keyboard shortcuts for the setup function and props. They are:
+
+```
+Cmd+Shift+J or Ctrl+Shift+J // destructures and logs props just like debug
+Cmd+Shift+H or Ctrl+Shift+H // create a setup function stub
+```
+
 ## Known Issues
 
+`setup` function generation doesn't include component name, perhaps this should just locate the cursor. Undecided for now.
+
 ## Release Notes
+
+### 1.1.0
+
+Add props logging and setup function generation
 
 ### 1.0.0
 

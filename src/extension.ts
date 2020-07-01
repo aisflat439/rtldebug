@@ -43,6 +43,49 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
+
+	disposable = vscode.commands.registerCommand('rtldebug.props', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (!editor) { return; }
+		// The code you place here will be executed every time your command is executed
+
+		editor.edit((editBuilder) => {
+			editBuilder.insert(editor.selection.active, `, props`)
+		});
+
+		vscode.commands.executeCommand('editor.action.insertLineAfter')
+			.then(() => {
+				insertText(`console.log("props", props);`);
+			})
+	});
+
+	context.subscriptions.push(disposable);
+
+	disposable = vscode.commands.registerCommand('rtldebug.render', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (!editor) { return; }
+		// The code you place here will be executed every time your command is executed
+
+		const renderWith = `
+  const setup = overrides => {
+		const props = {
+		...overrides
+		}
+
+		const R = render(< {...props}/>)
+
+		return {
+		...R,
+		props
+		}
+  }`
+
+		editor.edit((editBuilder) => {
+			editBuilder.insert(editor.selection.active, renderWith)
+		});
+	});
+
+	context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated
