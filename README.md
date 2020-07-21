@@ -57,11 +57,12 @@ Cmd+Shift+J or Ctrl+Shift+J // destructures and logs props just like debug
 Cmd+Shift+H or Ctrl+Shift+H // create a setup function stub
 ```
 
-## Known Issues
-
-`setup` function generation doesn't include component name, perhaps this should just locate the cursor. Undecided for now.
 
 ## Release Notes
+
+### 1.1.1
+
+When you use the `setup` function you now get the file name of your current file as the component name.
 
 ### 1.1.0
 
@@ -70,6 +71,11 @@ Add props logging and setup function generation
 ### 1.0.0
 
 Initial release of React Testing Library - Quick Debug
+
+### Developing this extension
+
+Open the extension in vscode, hit `f5`. This should open a seperate editor that is the compiled version of your code!
+In the new instace you can use the extension. In the debug console of the extension code instance you can see the debugger.
 
 ## License
 [MIT License](LICENSE)

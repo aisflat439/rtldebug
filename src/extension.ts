@@ -65,14 +65,16 @@ export function activate(context: vscode.ExtensionContext) {
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) { return; }
 		// The code you place here will be executed every time your command is executed
+		const filePath = editor.document.fileName;
+		const fileName = filePath.slice(filePath.lastIndexOf('/'), filePath.lastIndexOf('.'))
 
 		const renderWith = `
-  const setup = overrides => {
+  const setup = overrides => {	
 		const props = {
 		...overrides
 		}
 
-		const R = render(< {...props}/>)
+		const R = render(<${fileName} {...props}/>)
 
 		return {
 		...R,
