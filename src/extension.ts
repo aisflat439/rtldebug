@@ -66,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 		if (!editor) { return; }
 		// The code you place here will be executed every time your command is executed
 		const filePath = editor.document.fileName;
-		const fileName = filePath.slice(filePath.lastIndexOf('/'), filePath.lastIndexOf('.'))
+		const fileName = filePath.slice(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.'))
 
 		const renderWith = `
   const setup = overrides => {	
@@ -85,6 +85,35 @@ export function activate(context: vscode.ExtensionContext) {
 		editor.edit((editBuilder) => {
 			editBuilder.insert(editor.selection.active, renderWith)
 		});
+	});
+
+	context.subscriptions.push(disposable);
+
+	disposable = vscode.commands.registerCommand('rtldebug.view', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (!editor) { return; }
+		// The code you place here will be executed every time your command is executed
+		const filePath = editor.document.fileName;
+		const fileName = filePath.slice(filePath.lastIndexOf('/'), filePath.lastIndexOf('.'))
+		const specFile = `${filePath.slice(0, filePath.lastIndexOf('/'))}${fileName}.spec.js`
+		console.log('specFile', specFile)
+		// 		const renderWith = `
+		//   const setup = overrides => {	
+		// 		const props = {
+		// 		...overrides
+		// 		}
+
+		// 		const R = render(<${fileName} {...props}/>)
+
+		// 		return {
+		// 		...R,
+		// 		props
+		// 		}
+		//   }`
+
+		// 		editor.edit((editBuilder) => {
+		// 			editBuilder.insert(editor.selection.active, renderWith)
+		// 		});
 	});
 
 	context.subscriptions.push(disposable);

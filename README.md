@@ -60,6 +60,10 @@ Cmd+Shift+H or Ctrl+Shift+H // create a setup function stub
 
 ## Release Notes
 
+### 1.1.2
+
+Fix leading slash
+
 ### 1.1.1
 
 When you use the `setup` function you now get the file name of your current file as the component name.
