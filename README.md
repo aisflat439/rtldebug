@@ -60,6 +60,10 @@ Cmd+Shift+H or Ctrl+Shift+H // create a setup function stub
 
 ## Release Notes
 
+### 1.1.3
+
+remove `.spec`
+
 ### 1.1.2
 
 Fix leading slash

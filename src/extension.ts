@@ -66,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 		if (!editor) { return; }
 		// The code you place here will be executed every time your command is executed
 		const filePath = editor.document.fileName;
-		const fileName = filePath.slice(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.'))
+		const fileName = filePath.slice(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.')).replace('.spec', '')
 
 		const renderWith = `
   const setup = overrides => {	
