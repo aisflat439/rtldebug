@@ -57,8 +57,18 @@ Cmd+Shift+J or Ctrl+Shift+J // destructures and logs props just like debug
 Cmd+Shift+H or Ctrl+Shift+H // create a setup function stub
 ```
 
+Strictly for personal use I've added a debug wrapping statement with 
+```js
+Cmd+Shift+U or Ctrl+Shift+U // wraps in a util
+Cmd+Shift+C or Ctrl+Shift+C // color wrapts the selected text
+```
+
 
 ## Release Notes
+
+### 1.2.0
+
+add `color` and `util` selectors
 
 ### 1.1.3
 

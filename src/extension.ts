@@ -33,13 +33,13 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 
 		editor.edit((editBuilder) => {
-			editBuilder.insert(editor.selection.active, `, debug`)
+			editBuilder.insert(editor.selection.active, `, debug`);
 		});
 
 		vscode.commands.executeCommand('editor.action.insertLineAfter')
 			.then(() => {
 				insertText(`debug();`);
-			})
+			});
 	});
 
 	context.subscriptions.push(disposable);
@@ -66,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 		if (!editor) { return; }
 		// The code you place here will be executed every time your command is executed
 		const filePath = editor.document.fileName;
-		const fileName = filePath.slice(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.')).replace('.spec', '')
+		const fileName = filePath.slice(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.')).replace('.spec', '');
 
 		const renderWith = `
   const setup = overrides => {	
@@ -80,40 +80,56 @@ export function activate(context: vscode.ExtensionContext) {
 		...R,
 		props
 		}
-  }`
+  }`;
 
 		editor.edit((editBuilder) => {
-			editBuilder.insert(editor.selection.active, renderWith)
+			editBuilder.insert(editor.selection.active, renderWith);
 		});
 	});
 
 	context.subscriptions.push(disposable);
 
-	disposable = vscode.commands.registerCommand('rtldebug.view', () => {
+	disposable = vscode.commands.registerCommand('rtldebug.color', () => {
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) { return; }
 		// The code you place here will be executed every time your command is executed
-		const filePath = editor.document.fileName;
-		const fileName = filePath.slice(filePath.lastIndexOf('/'), filePath.lastIndexOf('.'))
-		const specFile = `${filePath.slice(0, filePath.lastIndexOf('/'))}${fileName}.spec.js`
-		console.log('specFile', specFile)
-		// 		const renderWith = `
-		//   const setup = overrides => {	
-		// 		const props = {
-		// 		...overrides
-		// 		}
 
-		// 		const R = render(<${fileName} {...props}/>)
+		const selection = editor.selection;
+		const text = editor.document.getText(selection);
+		if (!text) { return; }
+		
+		const coloredText = `
+		console.log(
+			'\x1b[44m%s\x1b[0m',
+			\`--docs--\${JSON.stringify(text)}-----\`
+		);`;
+		editor.edit((editBuilder) => {
+			editBuilder.insert(new vscode.Position(editor.selection.end.line, 100000), coloredText);
+		});
+	});
 
-		// 		return {
-		// 		...R,
-		// 		props
-		// 		}
-		//   }`
+	disposable = vscode.commands.registerCommand('rtldebug.util', () => {
+		const editor = vscode.window.activeTextEditor;
+		if (!editor) { return; }
+		// The code you place here will be executed every time your command is executed
 
-		// 		editor.edit((editBuilder) => {
-		// 			editBuilder.insert(editor.selection.active, renderWith)
-		// 		});
+		const selection = editor.selection;
+		const text = editor.document.getText(selection);
+		if (!text) { return; }
+		
+		const coloredText = `
+		console.log('************* here');
+		const util = require('util');
+		console.log(
+			util.inspect(${text}, {
+				colors: true,
+				depth: null,
+				maxArrayLength: 1000
+			})
+		);`;
+		editor.edit((editBuilder) => {
+			editBuilder.insert(new vscode.Position(editor.selection.end.line, 100000), coloredText);
+		});
 	});
 
 	context.subscriptions.push(disposable);

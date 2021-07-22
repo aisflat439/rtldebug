@@ -71,8 +71,12 @@
 				"title": "create a setup function"
 			},
 			{
-				"command": "rtldebug.view",
-				"title": "reads the assertions from an associated test file"
+				"command": "rtldebug.color",
+				"title": "wraps selected text in a color output"
+			},
+			{
+				"command": "rtldebug.color",
+				"title": "wraps selected text in a util selector"
 			}
 		],
 		"keybindings": [
@@ -95,9 +99,15 @@
 				"when": "editorTextFocus"
 			},
 			{
-				"command": "rtldebug.view",
-				"key": "ctrl+shift+r",
-				"mac": "cmd+shift+r",
+				"command": "rtldebug.color",
+				"key": "ctrl+shift+c",
+				"mac": "cmd+shift+c",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "rtldebug.util",
+				"key": "ctrl+shift+u",
+				"mac": "cmd+shift+u",
 				"when": "editorTextFocus"
 			}
 		]
