@@ -2,7 +2,7 @@
 	"name": "rtl-quick-debug",
 	"displayName": "React Testing Library - Quick Debug",
 	"description": "Makes debugging in react testing library a cinch!",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"publisher": "fitzsimonsdevin",
 	"author": {
 		"name": "fitzsimonsdevin"

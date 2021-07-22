@@ -101,7 +101,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const coloredText = `
 		console.log(
 			'\x1b[44m%s\x1b[0m',
-			\`--docs--\${JSON.stringify(text)}-----\`
+			\`--docs--\${JSON.stringify(${text})}-----\`
 		);`;
 		editor.edit((editBuilder) => {
 			editBuilder.insert(new vscode.Position(editor.selection.end.line, 100000), coloredText);

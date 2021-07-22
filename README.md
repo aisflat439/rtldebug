@@ -66,6 +66,9 @@ Cmd+Shift+C or Ctrl+Shift+C // color wrapts the selected text
 
 ## Release Notes
 
+### 1.2.1
+
+fix output bug
 ### 1.2.0
 
 add `color` and `util` selectors
