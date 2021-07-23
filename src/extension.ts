@@ -69,18 +69,18 @@ export function activate(context: vscode.ExtensionContext) {
 		const fileName = filePath.slice(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.')).replace('.spec', '');
 
 		const renderWith = `
-  const setup = overrides => {	
-		const props = {
-		...overrides
-		}
+		const setup = overrides => {	
+			const props = {
+			...overrides
+			}
 
-		const R = render(<${fileName} {...props}/>)
+			const R = render(<${fileName} {...props}/>)
 
-		return {
-		...R,
-		props
-		}
-  }`;
+			return {
+			...R,
+			props
+			}
+		}`;
 
 		editor.edit((editBuilder) => {
 			editBuilder.insert(editor.selection.active, renderWith);
@@ -101,8 +101,9 @@ export function activate(context: vscode.ExtensionContext) {
 		const coloredText = `
 		console.log(
 			'\x1b[44m%s\x1b[0m',
-			\`--docs--\${JSON.stringify(${text})}-----\`
+			\`--${text}--\${JSON.stringify(${text})}-----\`
 		);`;
+
 		editor.edit((editBuilder) => {
 			editBuilder.insert(new vscode.Position(editor.selection.end.line, 100000), coloredText);
 		});
@@ -127,6 +128,7 @@ export function activate(context: vscode.ExtensionContext) {
 				maxArrayLength: 1000
 			})
 		);`;
+
 		editor.edit((editBuilder) => {
 			editBuilder.insert(new vscode.Position(editor.selection.end.line, 100000), coloredText);
 		});

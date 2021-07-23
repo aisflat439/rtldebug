@@ -2,7 +2,7 @@
 	"name": "rtl-quick-debug",
 	"displayName": "React Testing Library - Quick Debug",
 	"description": "Makes debugging in react testing library a cinch!",
-	"version": "1.2.1",
+	"version": "2.0.0",
 	"publisher": "fitzsimonsdevin",
 	"author": {
 		"name": "fitzsimonsdevin"
@@ -82,32 +82,32 @@
 		"keybindings": [
 			{
 				"command": "rtldebug.debug",
-				"key": "ctrl+shift+b",
-				"mac": "cmd+shift+b",
+				"key": "ctrl+alt+b",
+				"mac": "cmd+ctrl+b",
 				"when": "editorTextFocus"
 			},
 			{
 				"command": "rtldebug.props",
-				"key": "ctrl+shift+j",
-				"mac": "cmd+shift+j",
+				"key": "ctrl+alt+j",
+				"mac": "cmd+ctrl+j",
 				"when": "editorTextFocus"
 			},
 			{
 				"command": "rtldebug.render",
-				"key": "ctrl+shift+h",
-				"mac": "cmd+shift+h",
+				"key": "ctrl+alt+h",
+				"mac": "cmd+ctrl+h",
 				"when": "editorTextFocus"
 			},
 			{
 				"command": "rtldebug.color",
-				"key": "ctrl+shift+c",
-				"mac": "cmd+shift+c",
+				"key": "ctrl+alt+c",
+				"mac": "cmd+ctrl+c",
 				"when": "editorTextFocus"
 			},
 			{
 				"command": "rtldebug.util",
-				"key": "ctrl+shift+u",
-				"mac": "cmd+shift+u",
+				"key": "ctrl+alt+u",
+				"mac": "cmd+ctrl+u",
 				"when": "editorTextFocus"
 			}
 		]
